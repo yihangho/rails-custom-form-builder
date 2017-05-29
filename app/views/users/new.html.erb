@@ -1,29 +1,29 @@
 <h1>Sign Up</h1>
 
 <%= form_with model: @user, local: true, builder: BootstrapFormBuilder do |form| %>
-  <div class="form-group <%= 'has-error' if @user.errors.has_key?(:name) %>">
+  <%= form.group :name do %>
     <%= form.label :name %>
     <%= form.text_field :name %>
     <%= form.errors :name %>
-  </div>
+  <% end %>
 
-  <div class="form-group <%= 'has-error' if @user.errors.has_key?(:email) %>">
+  <%= form.group :email do %>
     <%= form.label :email %>
     <%= form.email_field :email %>
     <%= form.errors :email %>
-  </div>
+  <% end %>
 
-  <div class="form-group <%= 'has-error' if @user.errors.has_key?(:password) %>">
+  <%= form.group :password do %>
     <%= form.label :password %>
     <%= form.password_field :password %>
     <%= form.errors :password %>
-  </div>
+  <% end %>
 
-  <div class="form-group <%= 'has-error' if @user.errors.has_key?(:password_confirmation) %>">
+  <%= form.group :password_confirmation do %>
     <%= form.label :password_confirmation %>
     <%= form.password_field :password_confirmation %>
     <%= form.errors :password_confirmation %>
-  </div>
+  <% end %>
 
   <%= form.submit "Sign Up", class: "btn btn-primary" %>
 <% end %>
