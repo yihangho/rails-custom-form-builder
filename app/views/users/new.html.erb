@@ -2,25 +2,25 @@
 
 <%= form_with model: @user, local: true, builder: BootstrapFormBuilder do |form| %>
   <div class="form-group <%= 'has-error' if @user.errors.has_key?(:name) %>">
-    <%= form.label :name, class: "control-label" %>
+    <%= form.label :name %>
     <%= form.text_field :name, class: "form-control" %>
     <%= form.errors :name %>
   </div>
 
   <div class="form-group <%= 'has-error' if @user.errors.has_key?(:email) %>">
-    <%= form.label :email, class: "control-label" %>
+    <%= form.label :email %>
     <%= form.email_field :email, class: "form-control" %>
     <%= form.errors :email %>
   </div>
 
   <div class="form-group <%= 'has-error' if @user.errors.has_key?(:password) %>">
-    <%= form.label :password, class: "control-label" %>
+    <%= form.label :password %>
     <%= form.password_field :password, class: "form-control" %>
     <%= form.errors :password %>
   </div>
 
   <div class="form-group <%= 'has-error' if @user.errors.has_key?(:password_confirmation) %>">
-    <%= form.label :password_confirmation, class: "control-label" %>
+    <%= form.label :password_confirmation %>
     <%= form.password_field :password_confirmation, class: "form-control" %>
     <%= form.errors :password_confirmation %>
   </div>
